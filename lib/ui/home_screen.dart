@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Note'),
         backgroundColor: Colors.amber,
+        centerTitle: true,
         actions: [IconButton(
           onPressed: () {
             Navigator.push(

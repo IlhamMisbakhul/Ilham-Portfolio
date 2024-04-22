@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:uibuils/ui/add_note_screen.dart';
 import 'package:uibuils/ui/info_detail_screen.dart';
@@ -22,7 +24,22 @@ class HomeScreen extends StatelessWidget {
           icon: Icon(Icons.info))],
 
       ),
-      body: Center(child: Text('You have no note for today'),),
+      body: Center(child: TextButton(onPressed: () {
+        showDialog(
+          context: context, 
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('ALERT!!!'),
+              content: Text('Please Add Your New Note'),
+              actions: <Widget>[
+                TextButton(onPressed: (){
+                  Navigator.of(context).pop();
+                }, child: Text('Okay'))
+              ],
+            );
+          });
+      },
+      child: Text('You have no note for today')),),
       drawer: Drawer(
         child: ListView(
           children: const[

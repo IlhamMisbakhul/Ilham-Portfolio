@@ -5,6 +5,12 @@ class AddNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow))
+        ],
+      ),
+    );
   }
 }

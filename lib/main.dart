@@ -13,6 +13,10 @@ class NoteApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Note App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        brightness: Brightness.dark
+      ),
       home:HomeScreen(),
     );
   }

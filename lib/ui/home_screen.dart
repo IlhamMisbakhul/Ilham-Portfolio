@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             );
           });
       },
-      child: const Text('You have no note add the new one')),),
+      child: const Text('You Have No Note Add the New One')),),
       drawer: Drawer(
         child: ListView(
           children: const[
@@ -55,7 +55,8 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        foregroundColor: Color.fromARGB(255, 0, 0, 0),
+        hoverColor: Color.fromARGB(255, 189, 186, 186),
+        foregroundColor: const Color.fromARGB(255, 0, 0, 0),
         shape: const CircleBorder(),
         onPressed: (){
         Navigator.push(

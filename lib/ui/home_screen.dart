@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             );
           });
       },
-      child: const Text('You have no note for today')),),
+      child: const Text('You have no note add the new one')),),
       drawer: Drawer(
         child: ListView(
           children: const[
@@ -48,8 +48,8 @@ class HomeScreen extends StatelessWidget {
               title: Text('Account'),
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account'),
+              leading: Icon(Icons.note_alt_rounded),
+              title: Text('Note'),
             )],
         ),
       ),

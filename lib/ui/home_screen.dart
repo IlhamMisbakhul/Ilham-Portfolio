@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uibuils/ui/add_note_screen.dart';
 import 'package:uibuils/ui/info_detail_screen.dart';
+import 'package:uibuils/ui/pan_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,40 +23,44 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.info))],
 
       ),
-      body: Center(child: TextButton(onPressed: () {
-        showDialog(
-          context: context, 
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('ALERT!!!'),
-              content: const Text('Please Add Your New Note'),
-              actions: <Widget>[
-                TextButton(onPressed: (){
-                  Navigator.of(context).pop();
-                }, child: const Text('Okay'))
-              ],
-            );
-          });
-      },
-      child: const Text('You Have No Note Add the New One')),),
-      drawer: Drawer(
-        child: ListView(
-          children: const[
-            DrawerHeader(child: Text('Info')),
-            EndDrawerButton(),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account'),
+      body: Center(
+        child: Column(
+          children: [
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddNote()));
+              },
+              child: Center(
+                child: Hero(
+                  tag: 'image_animation',
+                  child: Image.asset(
+                    'images/1.jpeg',
+                    width: 200,
+                    height: 200,
+                  ),
+                ),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.note_alt_rounded),
-              title: Text('Note'),
-            )],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const PanScreen(),));
+              },
+              child: const Text(
+                'On Pan Update',
+                style: TextStyle(
+                  backgroundColor: Colors.green,
+                  color: Colors.black
+                ),
+                ),
+            )
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        hoverColor: Color.fromARGB(255, 189, 186, 186),
+        hoverColor: const Color.fromARGB(255, 189, 186, 186),
         foregroundColor: const Color.fromARGB(255, 0, 0, 0),
         shape: const CircleBorder(),
         onPressed: (){
@@ -74,7 +79,7 @@ class HomeScreen extends StatelessWidget {
           label: 'Home'),
         BottomNavigationBarItem(
           icon: Icon(Icons.search),
-          label: 'Search')
+          label: 'Search'),
       ],),
     );
   }

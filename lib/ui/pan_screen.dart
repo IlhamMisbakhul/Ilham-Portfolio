@@ -1,16 +1,14 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class InfoDetailScreen extends StatefulWidget {
-  const InfoDetailScreen({super.key});
+class PanScreen extends StatefulWidget {
+  const PanScreen({super.key});
 
   @override
-  State<InfoDetailScreen> createState() => _InfoDetailScreenState();
+  State<PanScreen> createState() => _PanScreen();
 }
 
-class _InfoDetailScreenState extends State<InfoDetailScreen> {
+class _PanScreen extends State<PanScreen> {
   final double boxSize = 150.0;
   int tap = 0;
   int doubletap = 0;
@@ -47,22 +45,16 @@ class _InfoDetailScreenState extends State<InfoDetailScreen> {
                   long++;
                 });
               },
-              onVerticalDragUpdate: (DragUpdateDetails details) {
+              onPanUpdate: (DragUpdateDetails details){
                 setState(() {
-                  double vertical = details.delta.dy;
-                  y += vertical;
-                });
-              },
-              onHorizontalDragUpdate: (DragUpdateDetails details) {
-                setState(() {
-                  double horizontal = details.delta.dx;
-                  x += horizontal;
+                  x += details.delta.dx;
+                  y += details.delta.dy;
                 });
               },
               child: Container(
                 width: boxSize,
                 height: boxSize,
-                color: const Color.fromARGB(255, 243, 33, 33),
+                color:  Colors.green,
               ),
             ),
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uibuils/ui/home_screen.dart';
 
 void main(){
-  runApp(NoteApp());
+  runApp(const NoteApp());
   
 }
 class NoteApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class NoteApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark
       ),
-      home:HomeScreen(),
+      home:const HomeScreen(),
     );
   }
 }
